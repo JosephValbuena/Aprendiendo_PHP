@@ -1,0 +1,22 @@
+<?php
+    namespace Controllers;
+    require_once("../autoload.php");
+    use Models\Persona;
+    class Empleado extends Persona{
+
+        protected $puesto;
+
+        function __construct(int $cedula, string $nombre, int $edad){
+            parent::__construct($cedula,$nombre,$edad);
+        }
+
+        public function setPuesto(string $puesto){
+            $this->puesto = $puesto;
+        }
+
+        public function getPuesto():string{
+            return $this->puesto;
+        }
+
+    }
+?>
